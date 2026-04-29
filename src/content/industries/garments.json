@@ -1,0 +1,8 @@
+{
+  "slug": "garments",
+  "title": "Odoo for Garments Industry",
+  "description": "A Bangladesh-focused guide to using Odoo for garments operations: sales, purchasing, inventory, manufacturing, and quality workflows.",
+  "keywords": ["Odoo garments", "garments ERP Bangladesh", "Odoo inventory", "Odoo manufacturing"],
+  "modules": ["sales", "purchase", "inventory", "manufacturing", "accounting"]
+}
+

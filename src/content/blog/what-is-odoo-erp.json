@@ -1,0 +1,24 @@
+{
+  "slug": "what-is-odoo-erp",
+  "title": "What is Odoo ERP?",
+  "summary": "Odoo is an open source business suite that connects Sales, Accounting, Inventory, CRM, and more in a single workflow-driven platform.",
+  "publishedAt": "2026-04-01",
+  "keywords": ["What is Odoo", "Odoo ERP", "Open Source ERP"],
+  "sections": [
+    {
+      "heading": "An ERP built for real workflows",
+      "body": "Odoo brings core business apps together so teams can work with shared data: from quotations and invoices to inventory movements and reporting."
+    },
+    {
+      "heading": "Open source by design",
+      "body": "Because Odoo is open source, you can learn, customize, and extend it for Bangladesh-specific processes with community support."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is Odoo suitable for SMEs in Bangladesh?",
+      "a": "Yes. Odoo can scale from SME workflows to larger operations, with modular apps and community-backed knowledge."
+    }
+  ]
+}
+

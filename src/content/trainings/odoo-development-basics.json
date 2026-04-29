@@ -1,0 +1,8 @@
+{
+  "slug": "odoo-development-basics",
+  "track": "technical",
+  "title": "Odoo Development Basics",
+  "summary": "Start building Odoo modules with practical guidance on Python, ORM concepts, and the module structure.",
+  "targetAudience": ["Developers", "Software engineers", "CS students"]
+}
+

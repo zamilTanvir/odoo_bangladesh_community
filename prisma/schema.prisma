@@ -1,0 +1,75 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum InquiryType {
+  CONSULTATION
+  ASSESSMENT
+  WORKSHOP
+  WEBINAR
+  CONTACT
+}
+
+model LeadInquiry {
+  id            String        @id @default(cuid())
+  inquiryType  InquiryType   @default(CONSULTATION)
+
+  name          String?
+  email         String
+  phone         String?
+  company       String?
+  role          String?
+
+  source        String?
+  utmSource     String?
+  utmMedium     String?
+  utmCampaign   String?
+
+  message       String?
+  createdAt     DateTime      @default(now())
+
+  workshopRegistrations WorkshopRegistration[]
+  downloads             FreeAssessmentDownload[]
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  source    String?
+  createdAt DateTime @default(now())
+}
+
+model WorkshopRegistration {
+  id String @id @default(cuid())
+
+  eventId String?
+  track   String?
+  topic   String?
+  cohort  String?
+
+  createdAt DateTime @default(now())
+
+  leadInquiryId String?
+  leadInquiry   LeadInquiry? @relation(fields: [leadInquiryId], references: [id])
+}
+
+model FreeAssessmentDownload {
+  id String @id @default(cuid())
+
+  downloadType String?
+  createdAt    DateTime @default(now())
+
+  leadInquiryId String?
+  leadInquiry   LeadInquiry? @relation(fields: [leadInquiryId], references: [id])
+}

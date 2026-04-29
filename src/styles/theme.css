@@ -1,0 +1,25 @@
+:root {
+  /* Odoo-inspired (placeholder) brand palette; can be swapped for future rebranding. */
+  --brand-primary: #875a2b;
+  --brand-primary-2: #00a09d;
+
+  /* Typography + layout colors */
+  --text-strong: #101828;
+  --text-muted: #475467;
+  --bg: #ffffff;
+  --bg-elevated: #f8fafc;
+
+  /* Design tokens */
+  --radius-lg: 18px;
+  --shadow-soft: 0 10px 30px rgba(16, 24, 40, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-strong: #f2f4f7;
+    --text-muted: #a9b1bc;
+    --bg: #070a0f;
+    --bg-elevated: #0b1220;
+  }
+}
+

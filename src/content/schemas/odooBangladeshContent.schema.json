@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Odoo Bangladesh Content Schemas (Documented Format)",
+  "type": "object",
+  "definitions": {
+    "site": {
+      "type": "object",
+      "required": ["siteName", "siteUrl"],
+      "properties": {
+        "siteName": { "type": "string" },
+        "siteUrl": { "type": "string" },
+        "brandTagline": { "type": "string" },
+        "whatsappLink": { "type": "string" },
+        "supportEmail": { "type": "string" }
+      }
+    },
+    "industry": {
+      "type": "object",
+      "required": ["slug", "title", "description"],
+      "properties": {
+        "slug": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "keywords": { "type": "array", "items": { "type": "string" } },
+        "modules": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "module": {
+      "type": "object",
+      "required": ["slug", "title", "description"],
+      "properties": {
+        "slug": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "keywords": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "trainingTopic": {
+      "type": "object",
+      "required": ["slug", "track", "title", "summary"],
+      "properties": {
+        "slug": { "type": "string" },
+        "track": { "type": "string", "enum": ["functional", "technical"] },
+        "title": { "type": "string" },
+        "summary": { "type": "string" },
+        "targetAudience": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "blogPost": {
+      "type": "object",
+      "required": ["slug", "title", "summary", "sections"],
+      "properties": {
+        "slug": { "type": "string" },
+        "title": { "type": "string" },
+        "summary": { "type": "string" },
+        "publishedAt": { "type": "string" },
+        "keywords": { "type": "array", "items": { "type": "string" } },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["heading", "body"],
+            "properties": {
+              "heading": { "type": "string" },
+              "body": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "comparison": {
+      "type": "object",
+      "required": ["slug", "title", "summary"],
+      "properties": {
+        "slug": { "type": "string" },
+        "title": { "type": "string" },
+        "summary": { "type": "string" },
+        "keywords": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "careerGuide": {
+      "type": "object",
+      "required": ["slug", "title", "summary"],
+      "properties": {
+        "slug": { "type": "string" },
+        "title": { "type": "string" },
+        "summary": { "type": "string" }
+      }
+    },
+    "event": {
+      "type": "object",
+      "required": ["slug", "title", "date"],
+      "properties": {
+        "slug": { "type": "string" },
+        "title": { "type": "string" },
+        "date": { "type": "string" },
+        "summary": { "type": "string" },
+        "location": { "type": "string" }
+      }
+    },
+    "faqCollection": {
+      "type": "object",
+      "required": ["items"],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["q", "a"],
+            "properties": {
+              "q": { "type": "string" },
+              "a": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

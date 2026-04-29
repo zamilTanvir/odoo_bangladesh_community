@@ -1,0 +1,13 @@
+{
+  "items": [
+    {
+      "q": "Is this community portal affiliated with official Odoo?",
+      "a": "The portal is positioned as an independent community and learning hub for Odoo in Bangladesh. It focuses on resources and knowledge-sharing."
+    },
+    {
+      "q": "What kind of training is available?",
+      "a": "You can explore functional and technical training topics, plus workshops and webinar events aligned with real Odoo implementation needs."
+    }
+  ]
+}
+
