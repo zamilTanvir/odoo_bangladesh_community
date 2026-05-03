@@ -1,0 +1,14 @@
+{
+  "slug": "forum",
+  "title": "Community Forum",
+  "summary": "A place to ask questions, share Odoo tips, and connect with learners and implementers in Bangladesh.",
+  "keywords": ["Odoo forum Bangladesh", "Odoo community questions", "Odoo help Bangladesh"],
+  "sections": [
+    {
+      "type": "prose",
+      "title": "Forum (starting simple)",
+      "content": "The forum will begin as a curated Q&A hub and will evolve based on community participation. For now, you can use the inquiry form to ask questions and suggest topics you want covered."
+    }
+  ]
+}
+

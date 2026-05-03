@@ -3,6 +3,7 @@ import {
   getAllComparisons,
   getAllIndustries,
   getAllModules,
+  getAllPages,
   getAllTrainingTopics,
   loadSite,
 } from "@/lib/content/loadContent";
@@ -14,12 +15,23 @@ export default function sitemap() {
 
   // Root + implemented index pages
   urls.add(site.siteUrl);
+  urls.add(`${site.siteUrl}/about`);
+  urls.add(`${site.siteUrl}/contact`);
+  urls.add(`${site.siteUrl}/events`);
+  urls.add(`${site.siteUrl}/forum`);
+  urls.add(`${site.siteUrl}/faq`);
   urls.add(`${site.siteUrl}/industries`);
   urls.add(`${site.siteUrl}/modules`);
   urls.add(`${site.siteUrl}/training/functional`);
   urls.add(`${site.siteUrl}/training/technical`);
   urls.add(`${site.siteUrl}/comparisons`);
   urls.add(`${site.siteUrl}/blog`);
+  urls.add(`${site.siteUrl}/inquiry/consultation`);
+
+  // JSON page content (future-proofing for additional static pages)
+  for (const page of getAllPages()) {
+    urls.add(`${site.siteUrl}/${page.slug}`);
+  }
 
   // Programmatic SEO URLs (clean, SEO-friendly patterns)
   for (const industry of getAllIndustries()) {

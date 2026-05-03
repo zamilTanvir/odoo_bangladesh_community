@@ -16,6 +16,7 @@ export default function WorkshopRegistrationForm({
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
   const [role, setRole] = useState("");
+  const [website, setWebsite] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -38,6 +39,7 @@ export default function WorkshopRegistrationForm({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          hp: website,
           track,
           topic,
           cohort,
@@ -64,13 +66,25 @@ export default function WorkshopRegistrationForm({
   }
 
   return (
-    <div className="rounded-[var(--radius-lg)] border border-foreground/10 bg-background p-6">
+    <div className="rounded-[var(--radius-lg)] border border-border bg-surface p-6 shadow-[0_1px_0_rgba(15,23,42,0.03)]">
       <div className="mb-1 text-sm font-semibold text-foreground">{title}</div>
       <div className="text-sm text-muted">
         Join the learning session for <span className="font-medium text-foreground">{topic}</span>.
       </div>
 
       <form onSubmit={onSubmit} className="mt-4 space-y-4">
+        <div className="hidden" aria-hidden="true">
+          <label className="block text-sm font-medium text-foreground">
+            Website
+            <input
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              autoComplete="off"
+              tabIndex={-1}
+            />
+          </label>
+        </div>
+
         <div className="grid gap-4 sm:grid-cols-2">
           <Input
             label="Full name (optional)"

@@ -1,0 +1,8 @@
+{
+  "slug": "manufacturing",
+  "title": "Odoo for Manufacturing in Bangladesh",
+  "description": "Production planning, inventory, quality, and costing workflows for Bangladeshi manufacturers using Odoo.",
+  "keywords": ["Odoo manufacturing Bangladesh", "Manufacturing ERP Bangladesh", "MRP Bangladesh"],
+  "modules": ["manufacturing", "inventory", "purchase", "accounting"]
+}
+

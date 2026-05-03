@@ -9,6 +9,12 @@ export async function POST(req) {
     const body = await req.json();
     const email = body?.email;
 
+    // Honeypot (bot trap).
+    const hp = body?.hp || body?.website || "";
+    if (typeof hp === "string" && hp.trim().length > 0) {
+      return Response.json({ ok: true });
+    }
+
     if (!isValidEmail(email)) {
       return Response.json(
         { ok: false, error: "Valid email is required." },

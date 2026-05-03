@@ -6,6 +6,8 @@ import { getModuleBySlug, loadSite } from "@/lib/content/loadContent";
 import Card from "@/components/ui/Card";
 import Section from "@/components/ui/Section";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbListJsonLd } from "@/lib/seo/schemaOrg";
 
 export function generateStaticParams() {
   return getModuleStaticParams();
@@ -26,9 +28,22 @@ export async function generateMetadata({ params }) {
 export default async function ModuleDetailPage({ params }) {
   const { module } = await params;
   const moduleItem = getModuleBySlug(module);
+  const site = loadSite();
+  const canonicalPath = `/odoo-${moduleItem.slug}-bangladesh`;
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
+      <JsonLd
+        data={breadcrumbListJsonLd({
+          siteUrl: site.siteUrl,
+          items: [
+            { name: "Home", path: "/" },
+            { name: "Modules", path: "/modules" },
+            { name: moduleItem.title, path: canonicalPath },
+          ],
+        })}
+      />
+
       <Section className="pb-6">
         <h1 className="text-balance text-3xl font-semibold text-foreground sm:text-4xl">
           {moduleItem.title}
@@ -43,13 +58,13 @@ export default async function ModuleDetailPage({ params }) {
             <div className="mt-3 flex flex-wrap gap-2">
               <Link
                 href="/training/functional"
-                className="rounded-full border border-foreground/10 bg-background px-3 py-1 text-xs text-muted transition-colors hover:bg-foreground/[0.03]"
+                className="rounded-full border border-border bg-surface px-3 py-1 text-xs text-muted transition-colors hover:bg-foreground/[0.03]"
               >
                 Odoo Functional Training
               </Link>
               <Link
                 href="/training/technical"
-                className="rounded-full border border-foreground/10 bg-background px-3 py-1 text-xs text-muted transition-colors hover:bg-foreground/[0.03]"
+                className="rounded-full border border-border bg-surface px-3 py-1 text-xs text-muted transition-colors hover:bg-foreground/[0.03]"
               >
                 Odoo Technical Training
               </Link>

@@ -1,0 +1,8 @@
+{
+  "slug": "sme",
+  "title": "Odoo for SMEs in Bangladesh",
+  "description": "How small and medium businesses in Bangladesh can adopt Odoo step-by-step: accounting, sales, inventory, and reporting.",
+  "keywords": ["Odoo SME Bangladesh", "Best ERP in Bangladesh", "SME ERP solutions", "Open source ERP Bangladesh"],
+  "modules": ["sales", "crm", "accounting", "inventory"]
+}
+

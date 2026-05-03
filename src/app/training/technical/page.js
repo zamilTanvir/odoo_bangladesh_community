@@ -2,7 +2,19 @@ import Link from "next/link";
 
 import Card from "@/components/ui/Card";
 import Section from "@/components/ui/Section";
-import { getAllTrainingTopics } from "@/lib/content/loadContent";
+import { getAllTrainingTopics, loadSite } from "@/lib/content/loadContent";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export function generateMetadata() {
+  const site = loadSite();
+  return buildPageMetadata({
+    site,
+    title: "Odoo Technical Training (Bangladesh)",
+    description:
+      "Learn the building blocks of Odoo development: Python concepts, ORM, XML Views, QWeb, APIs, OWL, deployment, performance, and customization.",
+    canonicalPath: "/training/technical",
+  });
+}
 
 export default function TechnicalTrainingPage() {
   const topics = getAllTrainingTopics().filter((t) => t.track === "technical");

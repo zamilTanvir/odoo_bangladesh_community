@@ -1,0 +1,14 @@
+{
+  "slug": "faq",
+  "title": "FAQ",
+  "summary": "Answers to common questions about learning Odoo, training tracks, and how to use this community portal.",
+  "keywords": ["Odoo FAQ Bangladesh", "Learn Odoo Bangladesh FAQ", "Odoo training FAQ"],
+  "sections": [
+    {
+      "type": "prose",
+      "title": "Frequently asked questions",
+      "content": "This page collects community FAQs about Odoo learning, functional training, technical training, and implementation guidance."
+    }
+  ]
+}
+

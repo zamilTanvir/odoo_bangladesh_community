@@ -2,7 +2,19 @@ import Link from "next/link";
 
 import Card from "@/components/ui/Card";
 import Section from "@/components/ui/Section";
-import { getAllTrainingTopics } from "@/lib/content/loadContent";
+import { getAllTrainingTopics, loadSite } from "@/lib/content/loadContent";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export function generateMetadata() {
+  const site = loadSite();
+  return buildPageMetadata({
+    site,
+    title: "Odoo Functional Training (Bangladesh)",
+    description:
+      "Build practical ERP skills for Sales, CRM, Purchase, Inventory, Accounting, Manufacturing, HR, Payroll, POS, and more.",
+    canonicalPath: "/training/functional",
+  });
+}
 
 export default function FunctionalTrainingPage() {
   const topics = getAllTrainingTopics().filter((t) => t.track === "functional");

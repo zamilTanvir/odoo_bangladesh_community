@@ -19,6 +19,7 @@ export default function LeadInquiryForm({
   const [company, setCompany] = useState("");
   const [role, setRole] = useState("");
   const [message, setMessage] = useState(defaultMessage || "");
+  const [website, setWebsite] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -46,6 +47,7 @@ export default function LeadInquiryForm({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          hp: website,
           type: inquiryType,
           name: name.trim() || null,
           email: safeEmail,
@@ -72,7 +74,7 @@ export default function LeadInquiryForm({
   }
 
   return (
-    <div className={compact ? "" : "rounded-[var(--radius-lg)] border border-foreground/10 bg-background p-6"}>
+    <div className={compact ? "" : "rounded-[var(--radius-lg)] border border-border bg-surface p-6 shadow-[0_1px_0_rgba(15,23,42,0.03)]"}>
       <div className="mb-4">
         <div className="text-sm font-semibold text-foreground">{title}</div>
         <div className="mt-1 text-sm text-muted">
@@ -81,6 +83,18 @@ export default function LeadInquiryForm({
       </div>
 
       <form onSubmit={onSubmit} className="space-y-4">
+        <div className="hidden" aria-hidden="true">
+          <label className="block text-sm font-medium text-foreground">
+            Website
+            <input
+              value={website}
+              onChange={(e) => setWebsite(e.target.value)}
+              autoComplete="off"
+              tabIndex={-1}
+            />
+          </label>
+        </div>
+
         <div className="grid gap-4 sm:grid-cols-2">
           <Input
             label="Full name"

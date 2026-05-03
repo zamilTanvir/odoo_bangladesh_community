@@ -2,7 +2,19 @@ import Link from "next/link";
 
 import Card from "@/components/ui/Card";
 import Section from "@/components/ui/Section";
-import { getAllModules } from "@/lib/content/loadContent";
+import { getAllModules, loadSite } from "@/lib/content/loadContent";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export function generateMetadata() {
+  const site = loadSite();
+  return buildPageMetadata({
+    site,
+    title: "Odoo Modules Directory (Bangladesh)",
+    description:
+      "Learn how Odoo modules connect across Sales, CRM, Accounting, Inventory, and more—tailored for real implementation work in Bangladesh.",
+    canonicalPath: "/modules",
+  });
+}
 
 export default function ModulesPage() {
   const modules = getAllModules();

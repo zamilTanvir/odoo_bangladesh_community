@@ -2,7 +2,18 @@ import Link from "next/link";
 
 import Card from "@/components/ui/Card";
 import Section from "@/components/ui/Section";
-import { getAllBlogPosts } from "@/lib/content/loadContent";
+import { getAllBlogPosts, loadSite } from "@/lib/content/loadContent";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export function generateMetadata() {
+  const site = loadSite();
+  return buildPageMetadata({
+    site,
+    title: "Odoo Blog (Bangladesh)",
+    description: "Neutral, practical resources for Odoo learners, professionals, and businesses in Bangladesh.",
+    canonicalPath: "/blog",
+  });
+}
 
 export default function BlogIndexPage() {
   const posts = getAllBlogPosts();

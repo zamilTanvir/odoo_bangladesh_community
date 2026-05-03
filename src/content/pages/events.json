@@ -1,0 +1,14 @@
+{
+  "slug": "events",
+  "title": "Events & Webinars",
+  "summary": "Community workshops and webinars to learn practical Odoo workflows for Bangladesh use cases.",
+  "keywords": ["Odoo workshop Bangladesh", "Odoo webinar Bangladesh", "Odoo training events"],
+  "sections": [
+    {
+      "type": "prose",
+      "title": "What to expect",
+      "content": "Events are designed to be educational: walkthroughs, demos, Q&A, and learning roadmaps. Register to get reminders and session details."
+    }
+  ]
+}
+

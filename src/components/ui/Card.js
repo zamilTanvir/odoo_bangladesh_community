@@ -2,7 +2,7 @@ export default function Card({ className = "", ...props }) {
   return (
     <div
       className={[
-        "rounded-[var(--radius-lg)] border border-foreground/10 bg-background shadow-[var(--shadow-soft)]",
+        "rounded-[var(--radius-lg)] border border-border bg-surface shadow-[var(--shadow-card)]",
         className,
       ]
         .filter(Boolean)

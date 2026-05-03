@@ -2,7 +2,19 @@ import Link from "next/link";
 
 import Card from "@/components/ui/Card";
 import Section from "@/components/ui/Section";
-import { getAllIndustries } from "@/lib/content/loadContent";
+import { getAllIndustries, loadSite } from "@/lib/content/loadContent";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export function generateMetadata() {
+  const site = loadSite();
+  return buildPageMetadata({
+    site,
+    title: "Odoo in Bangladesh by Industry",
+    description:
+      "Explore Bangladesh-focused Odoo workflows, modules, and implementation guidance for real business needs.",
+    canonicalPath: "/industries",
+  });
+}
 
 export default function IndustriesPage() {
   const industries = getAllIndustries();

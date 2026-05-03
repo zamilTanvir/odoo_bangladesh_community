@@ -9,10 +9,29 @@ export async function POST(req) {
     const body = await req.json();
     const email = body?.email;
 
+    // Honeypot (bot trap).
+    const hp = body?.hp || body?.website || "";
+    if (typeof hp === "string" && hp.trim().length > 0) {
+      return Response.json({ ok: true });
+    }
+
     if (!isValidEmail(email)) {
       return Response.json(
         { ok: false, error: "Valid email is required." },
         { status: 400 }
+      );
+    }
+
+    const recentCount = await prisma.leadInquiry.count({
+      where: {
+        email,
+        createdAt: { gt: new Date(Date.now() - 60 * 1000) },
+      },
+    });
+    if (recentCount >= 3) {
+      return Response.json(
+        { ok: false, error: "Too many requests. Please try again in a minute." },
+        { status: 429 }
       );
     }
 

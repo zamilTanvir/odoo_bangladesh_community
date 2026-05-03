@@ -5,11 +5,13 @@ import {
   getAllBlogPosts,
   getAllIndustries,
   getAllModules,
+  getAllPages,
   getAllTrainingTopics,
   getFaqCollection,
 } from "./loadContent.js";
 
 export function buildRouteIndex() {
+  const pages = getAllPages();
   const industries = getAllIndustries();
   const modules = getAllModules();
   const trainings = getAllTrainingTopics();
@@ -20,6 +22,7 @@ export function buildRouteIndex() {
   const faqs = getFaqCollection();
 
   return {
+    pages: pages.map((p) => ({ slug: p.slug, title: p.title })),
     industries: industries.map((i) => ({ slug: i.slug, title: i.title })),
     modules: modules.map((m) => ({ slug: m.slug, title: m.title })),
     trainings: {

@@ -2,7 +2,19 @@ import Link from "next/link";
 
 import Card from "@/components/ui/Card";
 import Section from "@/components/ui/Section";
-import { getAllComparisons } from "@/lib/content/loadContent";
+import { getAllComparisons, loadSite } from "@/lib/content/loadContent";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+
+export function generateMetadata() {
+  const site = loadSite();
+  return buildPageMetadata({
+    site,
+    title: "Odoo Comparisons (Bangladesh)",
+    description:
+      "Explore how Odoo compares with other open-source and enterprise ERPs—so you can choose confidently.",
+    canonicalPath: "/comparisons",
+  });
+}
 
 export default function ComparisonsPage() {
   const items = getAllComparisons();

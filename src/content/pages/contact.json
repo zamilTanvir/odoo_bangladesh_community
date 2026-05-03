@@ -1,0 +1,14 @@
+{
+  "slug": "contact",
+  "title": "Contact / Inquiry",
+  "summary": "Get in touch for learning guidance, training inquiries, and implementation-related questions—without sales pressure.",
+  "keywords": ["Odoo Bangladesh contact", "Odoo consultation Bangladesh", "Odoo training inquiry"],
+  "sections": [
+    {
+      "type": "prose",
+      "title": "How to reach the community",
+      "content": "Use the inquiry form to ask questions about Odoo learning paths, functional training, technical training, and implementation considerations for Bangladesh organizations."
+    }
+  ]
+}
+

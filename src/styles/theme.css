@@ -1,25 +1,55 @@
 :root {
-  /* Odoo-inspired (placeholder) brand palette; can be swapped for future rebranding. */
-  --brand-primary: #875a2b;
-  --brand-primary-2: #00a09d;
+  /*
+    Theme tokens (brand + neutrals + surfaces).
+    This is intentionally a small “rebrand surface area”:
+    swap logo assets + the --brand-* tokens below to white-label later.
+  */
 
-  /* Typography + layout colors */
-  --text-strong: #101828;
-  --text-muted: #475467;
+  /* Brand (Odoo-inspired, NOT Odoo-official) */
+  --brand-primary: #7a4d2a;
+  --brand-primary-2: #0b8f8c;
+  --brand-accent: #8b5cf6;
+
+  /* Neutrals */
+  --text-strong: #0f172a;
+  --text-muted: #475569;
+  --text-faint: #64748b;
+
+  /* Surfaces */
   --bg: #ffffff;
   --bg-elevated: #f8fafc;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --border: rgba(15, 23, 42, 0.12);
 
-  /* Design tokens */
+  /* Effects */
+  --ring: rgba(122, 77, 42, 0.35);
+  --shadow-soft: 0 12px 40px rgba(15, 23, 42, 0.08);
+  --shadow-card: 0 1px 0 rgba(15, 23, 42, 0.06), 0 14px 36px rgba(15, 23, 42, 0.08);
+  --shadow-float: 0 28px 70px rgba(15, 23, 42, 0.14);
+
+  /* Shape + spacing */
   --radius-lg: 18px;
-  --shadow-soft: 0 10px 30px rgba(16, 24, 40, 0.06);
+  --radius-md: 14px;
+  --radius-sm: 12px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text-strong: #f2f4f7;
-    --text-muted: #a9b1bc;
-    --bg: #070a0f;
+    --text-strong: #f1f5f9;
+    --text-muted: #a1a9b4;
+    --text-faint: #8994a4;
+
+    --bg: #070a10;
     --bg-elevated: #0b1220;
+    --surface: #0b1220;
+    --surface-2: #0e1930;
+    --border: rgba(241, 245, 249, 0.14);
+
+    --ring: rgba(122, 77, 42, 0.45);
+    --shadow-soft: 0 18px 60px rgba(0, 0, 0, 0.42);
+    --shadow-card: 0 1px 0 rgba(255, 255, 255, 0.06), 0 28px 70px rgba(0, 0, 0, 0.45);
+    --shadow-float: 0 40px 90px rgba(0, 0, 0, 0.55);
   }
 }
 

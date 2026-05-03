@@ -9,6 +9,7 @@ import {
   validateFaqCollection,
   validateIndustry,
   validateModule,
+  validatePage,
   validateSite,
   validateTrainingTopic,
 } from "./validateContent.js";
@@ -16,6 +17,10 @@ import {
 const CONTENT_ROOT = path.join(process.cwd(), "src", "content");
 
 const typeConfig = {
+  pages: {
+    dir: "pages",
+    validator: validatePage,
+  },
   industries: {
     dir: "industries",
     validator: validateIndustry,
@@ -55,12 +60,25 @@ function readJsonFile(filePath) {
   return JSON.parse(raw);
 }
 
-function listJsonFiles(dirPath) {
+function listJsonFilesRecursive(dirPath) {
   if (!fs.existsSync(dirPath)) return [];
-  return fs
-    .readdirSync(dirPath)
-    .filter((name) => name.endsWith(".json"))
-    .map((name) => path.join(dirPath, name));
+
+  const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+  const results = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(dirPath, entry.name);
+    if (entry.isDirectory()) {
+      results.push(...listJsonFilesRecursive(fullPath));
+      continue;
+    }
+
+    if (entry.isFile() && entry.name.endsWith(".json")) {
+      results.push(fullPath);
+    }
+  }
+
+  return results;
 }
 
 export function loadSite() {
@@ -75,7 +93,7 @@ export function loadAllOfType(type) {
   if (!cfg) throw new Error(`Unknown content type: ${type}`);
 
   const dirPath = path.join(CONTENT_ROOT, cfg.dir);
-  const files = listJsonFiles(dirPath);
+  const files = listJsonFilesRecursive(dirPath);
   const items = files.map((filePath) => {
     const json = readJsonFile(filePath);
     cfg.validator(json);
@@ -93,6 +111,9 @@ export function loadBySlug(type, slug) {
 }
 
 // Convenience exports (used by page templates later)
+export const getAllPages = () => loadAllOfType("pages");
+export const getPageBySlug = (slug) => loadBySlug("pages", slug);
+
 export const getAllIndustries = () => loadAllOfType("industries");
 export const getIndustryBySlug = (slug) => loadBySlug("industries", slug);
 

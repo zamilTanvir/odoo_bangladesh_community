@@ -1,0 +1,19 @@
+{
+  "slug": "about",
+  "title": "About the Odoo Bangladesh Community",
+  "summary": "An independent, educational portal to help people learn Odoo ERP, share resources, and connect with the ecosystem in Bangladesh.",
+  "keywords": ["Odoo Bangladesh", "Odoo Community Bangladesh", "Learn Odoo Bangladesh"],
+  "sections": [
+    {
+      "type": "prose",
+      "title": "What this platform is",
+      "content": "odoobangladesh.com is a community-first learning and resource hub. The goal is to make Odoo knowledge easier to discover for learners, professionals, and organizations in Bangladesh—through guides, training roadmaps, and practical implementation resources."
+    },
+    {
+      "type": "prose",
+      "title": "What this platform is not",
+      "content": "This is not an official Odoo corporate website. It is an independent portal designed for education, community knowledge-sharing, and connecting people with the broader Odoo ecosystem."
+    }
+  ]
+}
+

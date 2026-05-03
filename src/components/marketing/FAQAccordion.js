@@ -13,7 +13,10 @@ export default function FAQAccordion({ items = [] }) {
       {normalized.map((item, idx) => {
         const open = idx === openIndex;
         return (
-          <div key={`${item.q}-${idx}`} className="rounded-[var(--radius-lg)] border border-foreground/10 bg-background p-4">
+          <div
+            key={`${item.q}-${idx}`}
+            className="rounded-[var(--radius-lg)] border border-border bg-surface p-4 shadow-[0_1px_0_rgba(15,23,42,0.03)]"
+          >
             <button
               type="button"
               className="flex w-full items-start justify-between gap-4 text-left"

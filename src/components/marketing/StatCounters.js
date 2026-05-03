@@ -59,7 +59,7 @@ export default function StatCounters({ stats = [] }) {
       {normalizedStats.map((stat, idx) => (
         <div
           key={stat.label}
-          className="rounded-[var(--radius-lg)] border border-foreground/10 bg-background/70 p-4 backdrop-blur"
+          className="rounded-[var(--radius-lg)] border border-border bg-surface/75 p-4 backdrop-blur shadow-[0_1px_0_rgba(15,23,42,0.03)]"
         >
           <div className="text-2xl font-semibold text-foreground">
             {formatValue(values[idx] || 0)}

@@ -1,0 +1,8 @@
+{
+  "slug": "retail",
+  "title": "Odoo for Retail in Bangladesh",
+  "description": "A practical guide to Odoo for retail: POS, inventory, purchasing, pricing, and reporting for Bangladesh stores.",
+  "keywords": ["Odoo retail Bangladesh", "Retail ERP Bangladesh", "Odoo POS Bangladesh", "Inventory for retail"],
+  "modules": ["pos", "inventory", "purchase", "accounting"]
+}
+

@@ -29,8 +29,10 @@ export default function Reveal({ children, className = "", delayMs = 0 }) {
       ref={ref}
       style={{ transitionDelay: `${delayMs}ms` }}
       className={[
-        "transition-all duration-700 ease-out",
-        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+        "transition-all duration-700 ease-out will-change-transform",
+        inView
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-5 motion-reduce:opacity-100 motion-reduce:translate-y-0",
         className,
       ].join(" ")}
     >

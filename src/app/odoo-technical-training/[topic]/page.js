@@ -3,7 +3,9 @@ import { getTrainingTopicBySlug, loadSite } from "@/lib/content/loadContent";
 
 import Card from "@/components/ui/Card";
 import Section from "@/components/ui/Section";
-import { buildPageMetadata } from "@/lib/seo/metadata";
+import JsonLd from "@/components/seo/JsonLd";
+import { buildCanonicalUrl, buildPageMetadata } from "@/lib/seo/metadata";
+import { breadcrumbListJsonLd, courseJsonLd } from "@/lib/seo/schemaOrg";
 import SyllabusDownloadForm from "@/components/forms/SyllabusDownloadForm";
 import LeadInquiryForm from "@/components/forms/LeadInquiryForm";
 import WorkshopRegistrationForm from "@/components/forms/WorkshopRegistrationForm";
@@ -25,11 +27,26 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function TechnicalTrainingTopicPage({ params }) {
+  const site = loadSite();
   const { topic } = await params;
   const topicItem = getTrainingTopicBySlug(topic);
+  const canonicalPath = `/odoo-technical-training/${topicItem.slug}`;
+  const url = buildCanonicalUrl(site.siteUrl, canonicalPath);
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
+      <JsonLd
+        data={breadcrumbListJsonLd({
+          siteUrl: site.siteUrl,
+          items: [
+            { name: "Home", path: "/" },
+            { name: "Technical training", path: "/training/technical" },
+            { name: topicItem.title, path: canonicalPath },
+          ],
+        })}
+      />
+      <JsonLd data={courseJsonLd({ site, topic: topicItem, url })} />
+
       <Section className="pb-6">
         <h1 className="text-balance text-3xl font-semibold text-foreground sm:text-4xl">
           {topicItem.title}
@@ -47,7 +64,7 @@ export default async function TechnicalTrainingTopicPage({ params }) {
               {(topicItem.targetAudience || []).map((a) => (
                 <span
                   key={a}
-                  className="rounded-full border border-foreground/10 bg-background px-3 py-1 text-xs text-muted"
+                  className="rounded-full border border-border bg-surface px-3 py-1 text-xs text-muted"
                 >
                   {a}
                 </span>
