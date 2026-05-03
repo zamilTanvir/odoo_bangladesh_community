@@ -62,22 +62,44 @@ export default function Home() {
                 Independent, community-driven Odoo learning in Bangladesh
               </div>
 
-              <h1 className="mt-4 text-balance text-4xl font-semibold text-foreground sm:text-5xl">
+              <h1 className="mt-4 text-balance text-4xl font-bold italic leading-tight text-[#212529] sm:text-5xl sm:leading-[1.15] font-[family-name:var(--font-accent)]">
                 Learn Odoo, connect with experts, and grow your skills on{" "}
-                <span className="relative inline-block">
+                <span className="relative inline-block px-0.5">
                   <span className="relative z-10">one community platform</span>
                   <span
                     aria-hidden="true"
-                    className="absolute -bottom-1 left-0 right-0 -z-0 h-4 rounded-full bg-primary/20"
+                    className="absolute inset-x-[-0.12em] bottom-1 h-[0.42em] -rotate-1 -skew-x-3 rounded-sm bg-gradient-to-r from-[#FFB133] to-[#FFCA4D] opacity-95"
                   />
                 </span>
                 .
               </h1>
 
-              <div className="mt-3 text-lg leading-7 text-muted">
-                <span className="font-[var(--font-accent)] text-2xl text-foreground/80">
-                  Simple, guided, and Bangladesh-focused.
-                </span>
+              <div className="relative mt-4">
+                <p className="max-w-xl font-[family-name:var(--font-accent)] text-2xl font-semibold italic leading-snug text-[#212529] sm:text-3xl">
+                  Simple, guided, yet{" "}
+                  <span className="relative inline-block decoration-[#00A0E9] decoration-[3px] underline-offset-[6px] underline decoration-wavy">
+                    Bangladesh-focused
+                  </span>
+                  !
+                </p>
+
+                <div className="relative mt-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                  <span aria-hidden="true" className="pointer-events-none absolute -top-10 right-0 hidden h-16 w-24 sm:block md:right-8">
+                    <svg viewBox="0 0 96 64" className="h-full w-full text-[#714B67]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8 12 Q 40 8 52 28 Q 64 48 88 52"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        fill="none"
+                      />
+                      <path d="M82 46 L88 52 L80 54" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                    </svg>
+                  </span>
+                  <p className="font-[family-name:var(--font-accent)] text-lg italic leading-tight text-[#714B67] sm:text-end sm:text-xl md:max-w-[14rem]">
+                    Community resources — always free to explore
+                  </p>
+                </div>
               </div>
 
               <p className="mt-4 max-w-xl text-sm leading-7 text-muted sm:text-base">
