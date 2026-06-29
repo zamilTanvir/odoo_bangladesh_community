@@ -8,20 +8,27 @@ export default function Footer() {
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="grid gap-10 md:grid-cols-12">
-          <div className="space-y-3 md:col-span-4">
-          <Link href="/" className="flex items-center gap-3">
-          {/* <BrandLogo /> */}
-          <div className="leading-tight">
-            <div className="flex items-center gap-1.5">
-              <OdooWordmark className="h-5 w-auto" />
-              <span className="text-sm font-semibold text-muted">Bangladesh</span>
+          <div className="md:col-span-4">
+            <div className="leading-tight">
+              <Link href="/" className="inline-flex items-center gap-3">
+                {/* <BrandLogo /> */}
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <OdooWordmark className="h-5 w-auto" />
+                    <span className="text-sm font-semibold text-muted">Bangladesh</span>
+                  </div>
+                  <div className="text-xs text-muted">Learn, implement & connect</div>
+                </div>
+              </Link>
+              <div className="mt-4">
+                <NewsletterSignupForm
+                  variant="footer"
+                  title="Stay updated"
+                  subtitle="Guides, training & events — no spam."
+                  ctaLabel="Subscribe"
+                />
+              </div>
             </div>
-            <div className="text-xs text-muted">Learn, implement & connect</div>
-          </div>
-        </Link>
-            <p className="text-sm text-muted">
-              Explore Odoo resources, training programs, and implementation guidance tailored for Bangladesh.
-            </p>
           </div>
 
           <div className="md:col-span-2">
@@ -82,7 +89,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="md:col-span-2">
+          <div className="md:col-span-4">
             <h3 className="text-sm font-semibold text-foreground">Community</h3>
             <ul className="mt-4 space-y-3 text-sm">
               <li>
@@ -110,10 +117,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
-          <div className="md:col-span-2 md:justify-self-end md:w-[320px]">
-            <NewsletterSignupForm compact={false} />
-          </div>
         </div>
 
         <div className="mt-12 border-t border-border pt-6">
@@ -132,4 +135,3 @@ export default function Footer() {
     </footer>
   );
 }
-

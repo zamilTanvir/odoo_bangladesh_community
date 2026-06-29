@@ -112,7 +112,7 @@ export default function Home() {
                   Explore resources
                 </Button>
                 <Button href="/inquiry/consultation" variant="outline" size="lg">
-                  Request ERP consultation
+                  Request consultation
                 </Button>
                 <Button href="/training/functional" variant="ghost" size="lg">
                   Explore training
@@ -412,14 +412,14 @@ export default function Home() {
         <Section className="pt-12 pb-16">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
             <div>
-              <h2 className="text-balance text-2xl font-semibold text-foreground">Frequently asked questions</h2>
+              {/* <h2 className="text-balance text-2xl font-semibold text-foreground">Frequently asked questions</h2>
               <p className="mt-2 text-sm text-muted">
                 Neutral, educational answers about Odoo learning, training programs, and the community portal.
-              </p>
+              </p> */}
 
-              <div className="mt-6 space-y-3">
+              {/* <div className="mt-6 space-y-3">
                 <SyllabusDownloadForm topicSlug={featuredTopic} topicTitle={featuredTopic} compact={true} />
-              </div>
+              </div> */}
 
               <div className="mt-6 rounded-[var(--radius-lg)] border border-border bg-surface p-6">
                 <div className="text-sm font-semibold text-foreground">Need guidance for your context?</div>
