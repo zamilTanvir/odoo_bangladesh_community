@@ -1,14 +1,18 @@
 import Link from "next/link";
 import BrandLogo from "@/components/site/BrandLogo";
+import OdooWordmark from "@/components/site/OdooWordmark";
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/75 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="flex items-center gap-3">
-          <BrandLogo />
+          {/* <BrandLogo /> */}
           <div className="leading-tight">
-            <div className="text-sm font-semibold text-foreground">Odoo Bangladesh</div>
+            <div className="flex items-center gap-1.5">
+              <OdooWordmark className="h-5 w-auto" />
+              <span className="text-sm font-semibold text-muted">Bangladesh</span>
+            </div>
             <div className="text-xs text-muted">Learn, implement & connect</div>
           </div>
         </Link>

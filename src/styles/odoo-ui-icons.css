@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "odoo_ui_icons";
+  src: url("/fonts/odoo_ui_icons.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.oi {
+  display: inline-block;
+  font-family: "odoo_ui_icons";
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.oi-odoo::before {
+  content: "\e806";
+}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import BrandLogo from "@/components/site/BrandLogo";
 import NewsletterSignupForm from "@/components/forms/NewsletterSignupForm";
+import OdooWordmark from "@/components/site/OdooWordmark";
 
 export default function Footer() {
   return (
@@ -8,13 +9,16 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="space-y-3 md:col-span-4">
-            <div className="flex items-center gap-3">
-              <BrandLogo />
-              <div className="leading-tight">
-                <div className="text-sm font-semibold text-foreground">Odoo Bangladesh</div>
-                <div className="text-xs text-muted">Community portal & learning hub</div>
-              </div>
+          <Link href="/" className="flex items-center gap-3">
+          {/* <BrandLogo /> */}
+          <div className="leading-tight">
+            <div className="flex items-center gap-1.5">
+              <OdooWordmark className="h-5 w-auto" />
+              <span className="text-sm font-semibold text-muted">Bangladesh</span>
             </div>
+            <div className="text-xs text-muted">Learn, implement & connect</div>
+          </div>
+        </Link>
             <p className="text-sm text-muted">
               Explore Odoo resources, training programs, and implementation guidance tailored for Bangladesh.
             </p>
