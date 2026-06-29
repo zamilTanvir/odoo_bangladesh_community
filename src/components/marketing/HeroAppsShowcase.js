@@ -75,19 +75,23 @@ function AppGlyph({ variant = "a" }) {
   );
 }
 
+function moduleHref(slug) {
+  return slug ? `/odoo-${slug}-bangladesh` : "/modules";
+}
+
 export default function HeroAppsShowcase({ eventLabel, eventHref = "/events" }) {
   const apps = [
-    { label: "Accounting", variant: "a" },
+    { label: "Accounting", variant: "a", slug: "accounting" },
     { label: "Knowledge", variant: "b" },
     { label: "Sign", variant: "c" },
-    { label: "CRM", variant: "a" },
+    { label: "CRM", variant: "a", slug: "crm" },
     { label: "Studio", variant: "b" },
     { label: "Subscriptions", variant: "c" },
     { label: "AI", variant: "b" },
-    { label: "Point of Sale", variant: "a" },
+    { label: "Point of Sale", variant: "a", slug: "pos" },
     { label: "Discuss", variant: "c" },
     { label: "Documents", variant: "b" },
-    { label: "Project", variant: "a" },
+    { label: "Project", variant: "a", slug: "project" },
     { label: "Timesheets", variant: "c" },
     { label: "Field Service", variant: "a" },
     { label: "Planning", variant: "b" },
@@ -115,12 +119,18 @@ export default function HeroAppsShowcase({ eventLabel, eventHref = "/events" }) 
 
         <div className="mt-6 grid grid-cols-3 gap-3 sm:grid-cols-6 sm:gap-4">
           {apps.map((app) => (
-            <div key={app.label} className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-[18px] border border-border bg-background shadow-[0_1px_0_rgba(15,23,42,0.04)]">
+            <Link
+              key={app.label}
+              href={moduleHref(app.slug)}
+              className="group block text-center transition-transform duration-300 hover:-translate-y-0.5"
+            >
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-[18px] border border-border bg-background shadow-[0_1px_0_rgba(15,23,42,0.04)] transition-colors group-hover:border-primary/30">
                 <AppGlyph variant={app.variant} />
               </div>
-              <div className="mt-2 text-[11px] font-medium text-foreground/90">{app.label}</div>
-            </div>
+              <div className="mt-2 text-[11px] font-medium text-foreground/90 group-hover:text-primary">
+                {app.label}
+              </div>
+            </Link>
           ))}
         </div>
 

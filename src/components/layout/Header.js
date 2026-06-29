@@ -10,7 +10,7 @@ export default function Header() {
           {/* <BrandLogo /> */}
           <div className="leading-tight">
             <div className="flex items-center gap-1.5">
-              <OdooWordmark className="h-5 w-auto" />
+              <OdooWordmark className="h-5 w-auto"  />
               <span className="text-sm font-semibold text-muted">Bangladesh</span>
             </div>
             <div className="text-xs text-muted">Learn, implement & connect</div>
